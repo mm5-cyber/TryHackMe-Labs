@@ -22,6 +22,8 @@
 
 ## The Process: 
 
+<b>Task 2: Alert Funneling </b> 
+
 The lab tought me about the Alert Funnel, which is a SOC filtering process where massive amounts of raw telemetry and security events are funneled down into a highly manageable number of actual security incidents. Below is an image of what the alert funnel looks like: 
 
 <img width="780" height="366" alt="image" src="https://github.com/user-attachments/assets/13b342a6-8db0-4d12-b228-c0eb7f1c27d6" /> 
@@ -41,4 +43,39 @@ Transfer the alert to a L2 analyst along with the relevent documentation about i
 - Communication
 
 During or after the analysis, it is important to communicate with the other departments. Like the HR Department for info about users, or the IT department for confirmation if they have granted privileges to certain users or groups. 
-  
+
+
+<b>Task 3: Reproting Guide </b>
+
+Reporting is especially important as it provides context for escalation, save findings for records, and improves the investigation skills of L1 Analysts. 
+
+For the format of the report, TryHackMe reccomends to include the five W's whenever possible. These of which are "Who, What, When, Where, and Why". I also followed the Alert Report Checklist to make sure that my report provides as much information as possible to the L2 Analyst. 
+
+<img width="408" height="599" alt="image" src="https://github.com/user-attachments/assets/e800b5be-1a00-46b9-a432-698ea115d1d5" />
+<sub>Alert Report Checklist (THM)</sub> 
+
+Using this info, I was prompted to open the THM SOC Dashboard and write a report for an email marked as "phishing", after it had already been sent to the recipient. 
+
+Here is the SIEM findings:
+
+<img width="1619" height="361" alt="image" src="https://github.com/user-attachments/assets/daf8620d-40aa-4ad0-bbe3-de9f8a906518" />
+
+While analysing the findings, I set myself as the assignee, and changed the status from "awaiting action" to in-progress. 
+
+<img width="660" height="474" alt="image" src="https://github.com/user-attachments/assets/59de8126-f3c0-408d-b77b-05b8338c25af" /> 
+<sub> Assigning myself to the alert, and changing the status to "in-progress"</sub>
+
+here is what I wrote in my alert report, I ensured that I followed the Alert Report Checklist: 
+
+<img width="691" height="375" alt="image" src="https://github.com/user-attachments/assets/7d53bb50-0fcb-42a0-8bfe-ad9367ffed66" />
+
+I then escalated the alert. I set the assignee to a L2 Analyst, kept the status set to "In Progress", as it's still ongoing. I then set the verdict to "True Positive", as the activity is deemed as malicious, and requires L2 expertise. 
+
+<img width="653" height="468" alt="image" src="https://github.com/user-attachments/assets/d03041c8-956a-45d0-86d1-e21bc077aef6" />
+
+<sub>My alert reporting and escalation submission</sub> 
+
+
+
+
+

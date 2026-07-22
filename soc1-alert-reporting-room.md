@@ -104,6 +104,20 @@ I assigned the alert to L2, changed the verdict to "True Positive". Additionally
 
 <sub>My alert report and escalation submission</sub> 
 
+<b>Task 5: SOC Communication</b> 
+
+This last section of the room is about preparing for unexpected scenarios amd knowing what to do in the event of a critical event. In most workplaces, the SOC team has its own "Crisis Communication" Procedures. However, it is still important to review communication cases to be prepared to handle these scenarios effectively. These are examples provided by THM. 
+
+Here are some "Communication Cases" examples: 
+
+<img width="820" height="376" alt="image" src="https://github.com/user-attachments/assets/0cea4720-c58c-49d3-a5f9-9c216e85c37c" />
+<sub>Communication Cases (THM) </sub> 
+
+## Sources 
+
+TryHackMe, n.d., SOC L1 Alert Reporting, website, accessed 22 July 2026, Available: <https://tryhackme.com/room/socl1alertreporting>
+
+
 
 
 

@@ -32,9 +32,13 @@ As a SOC L1 Analust, you need to be able to send alerts for complex security inc
 
 - Alert Reporting:
   
-    Documentining your investigation in detail, and including relevent evidence. This is especially important if the investigation is about a "True Positive" alert, which may require escalation to a L2 analyst. 
+Documentining your investigation in detail, and including relevent evidence. This is especially important if the investigation is about a "True Positive" alert, which may require escalation to a L2 analyst. 
 
 - Alert Escalation
+  
+Transfer the alert to a L2 analyst along with the relevent documentation about it that you createed during the alert reporting process. This improves efficiency, so that the L2 Analyst doesn't have to spend too much time analysing the alert from scratch. Essentially, it gives them an idea on what the alert is about.  
 
 - Communication
+
+During or after the analysis, it is important to communicate with the other departments. Like the HR Department for info about users, or the IT department for confirmation if they have granted privileges to certain users or groups. 
   

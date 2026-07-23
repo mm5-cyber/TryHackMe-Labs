@@ -73,7 +73,11 @@ Here is a reference table also provided by THM, regarding the SOC metrics for a 
 | SOC Team Availability | 24/7 | Working schedule of the SOC team, often Monday-Friday (8/5) or 24/7 mode |
 | Mean Time to Detect (MTTD) | 5 minutes| Average time between the attack and its detection by SOC tools |
 | Mean Time to Acknowledge (MTTA) | 10 minutes | Average time for L1 analysts to start triage of the new alert |
-| Mean Time to Respond (MTTR) | 60 minutes | Average time taken by SOC to actualy stop the breach from spreading |
+| Mean Time to Respond (MTTR) | 60 minutes | Average time taken by SOC to actualy stop the breach from spreading | 
+
+<sub>SOC metrics reference table (THM, n.d.)</sub> 
+
+<b>Task 4: Improving Metrics</b> 
 
 
 

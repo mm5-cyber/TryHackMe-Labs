@@ -79,6 +79,79 @@ Here is a reference table also provided by THM, regarding the SOC metrics for a 
 
 <b>Task 4: Improving Metrics</b> 
 
+Metrics were built to make the SOC more efficient, leading to making attacks far less successful. Metrics are also used to evaluate your own performance. 
+
+TryHackMe provides reccomendations to resolve issues regarding SOC Metrics: 
+
+- Falso Positive Rate over 80%: It means that your team recieves too much noise in their alerts. To remediate this try to exclude trusted activities like system updates from your EDR or SIEM detection rules and Consider automating alert triage for the most common alerts by using Security, Orchestration, Automation, and Response (SOAR), or have custom scripts written. 
+
+- If the Mean Time to Detect (MTTD) is over 30 minutes, it means that there is a high delay in threat detection. To remediate this issue, consider contacting SOC engineers to make the detection rules run faster or with a higher rate. Also check if the SIEM logs are being collected in real-time, without delay. 
+
+- If the Mean Time to Acknowledge is over 30 minutes, this means that there is a also a high delay when it comes to L1 analysts starting their alert triage. It's best to ensure that all analysts are being notified in real-time whenever a new alert appears. Also ensure that the alerts in the queue are being evenly distributed between the analysts that are on shift. This is so that no one analyst is being overloaded with work, resulting in a higher time to acknowledge the alert. 
+
+- If the Mean Time to Respons (MTTR) is over 4 hours, this means that the SOC team cannot stop the breach in time. For L1 Analysts, they should priotise making everything possible to quickly escalate the threats to L2. Additionally, make sure that the team has documentaion on varioud different attack scenarios, so that these issues can be remediated effectively in a more timely manner. 
+
+<b>Task 5: Practice Scenarios </b>  
+
+In the practical lab for this room, you are put in the position of a SOC manager that is currently recieving three different complaints related to the SOC team. The goal is to correctly idenify the problematic metric involved, identify the task needed to improve this metric, and assign the task to the right person/people. 
+
+
+The First Complaint: 
+
+"Dear SOC manager, our biggest customer, OpenDoor Inc., was dissatisfied with how we handle breaches. When their CFO’s email and Entra ID account were breached, it took us almost 6 hours to kick out the hacker from the mailbox, and threat actors had enough time to dump all emails and leak them on Darknet. Looking at the report, looks like we had a critical alert and spent 5 hours trying to properly reset the victim’s Entra ID password and MFA. How could it happen, and what would be your actions?" 
+
+Problematic Metric: 
+
+The Time to respond was to high, too much time to spend to contain the attack.  
+
+Improvement Task: 
+
+Create a workbook explaining credential rotation steps, and present it to the team. This is a great task, as it will help the team be able to quickly and effectively resolve the issue. 
+
+Assign Task To: 
+
+Assign the research and workbook creation task to the L2 that handled the incident. 
+
+The Second Complaint: 
+
+"Hey, thanks for the SOC demo for our top management. They loved your ransomware simulation and were shocked at how your team managed to stop the attack in 40 minutes. However, for the first 20 minutes, everyone was just looking at the screen, waiting for some alerts to appear. It would be nice to somehow reduce this huge delay, what do you think?" 
+
+Problematic Metric: 
+
+Time to Detect of 20 minutes led to a delayed alert triage. 
+
+Improvement Task: 
+
+Tune the SIEM and the detection rules to run more often, every 5 minutes. There is a problem involving the alert appearing for the L1 analysts. 
+
+Assign Task To: 
+
+Assign the detection rule's schedule review to the dedicated SOC engineers. 
+
+The Third Complaint: 
+
+"Dear SOC manager, on behalf of all L1 analysts, I want to raise an issue that may require your help. On average, during an 8-hour shift, our L1 analysts close 760 alerts, 95% of which is system noise from our IT team or automation scripts. It is impossible to perform a vigilant triage with such a big load, and analysts are starting to get exhausted. Moreover, as the company grows, we receive more and more alerts. Can you help us with it, please?" 
+
+Problematic Metric: 
+
+False Positive Rate is the core of the problem. There is too much noise that the L1's have to sift through to actually find the alerts that actually require attention.
+
+Improvement Task: 
+
+Schedule a call with the team to implement the False Positive remediation process. 
+
+Assign Task To: 
+
+Assign the task to SOC engineers to exclude the system and IT noise from the rules. It significantly reduces FP alerts. 
+
+I was successfully able to choose the correct choices across the three scenarios on my first attempt. 
+
+<b>Task 5: Conclusion</b> 
+
+In this lab I learnt about the core internal metrics, and the key performance metrics that are often featured in Service Level Agreements. Additionally, I briefly explored what it's like to be in the shoes of a SOC manager trying to help their team improve their key performance metrics's by partaking in the interactive practice scenarios. 
+
+## Sources 
+
 
 
 

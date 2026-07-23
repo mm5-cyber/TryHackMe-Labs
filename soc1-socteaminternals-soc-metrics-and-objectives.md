@@ -20,3 +20,11 @@
 <b>Tools</b> 
 
 - THM Workbook Practice Site
+
+## Process 
+
+<b>Task 1: Introduction </b> 
+
+This room is about exploring the "most common evaluation approaches like MTTD and MTTR, and describes both methods to improve the metrics and potential consequences of ignoring them" (THM, n.d.).
+
+<b>Task 2: Core Metrics </b> 

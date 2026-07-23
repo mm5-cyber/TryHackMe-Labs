@@ -152,8 +152,7 @@ In this lab I learnt about the core internal metrics, and the key performance me
 
 ## Sources 
 
-
-
+TryHackMe, n.d., SOC L1 SOC Metrics and Objectives, TryHackMe website, accessed 23 July 2026, Available: <https://tryhackme.com/room/socmetricsobjectives>
 
 
 

@@ -115,7 +115,7 @@ Here are some "Communication Cases" examples:
 
 ## Sources 
 
-TryHackMe, n.d., SOC L1 Alert Reporting, website, accessed 22 July 2026, Available: <https://tryhackme.com/room/socl1alertreporting>
+TryHackMe, n.d., SOC L1 Alert Reporting, TryHackMe website, accessed 22 July 2026, Available: <https://tryhackme.com/room/socl1alertreporting>
 
 
 

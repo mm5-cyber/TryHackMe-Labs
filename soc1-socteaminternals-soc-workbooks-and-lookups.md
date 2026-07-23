@@ -99,9 +99,7 @@ Assign the alert to yourself, gather the relevent information using network diag
 
 ## Sources 
 
-https://www.researchgate.net/figure/Network-diagram-of-the-enterprise-network-used-in-the-experiment_fig3_288208464 
+ResearchGate, n.d., Metwprl diagram of the enterprise network used in the experiment, ResearchGate website, accessed 23 July 2026, Avaialable: <https://www.researchgate.net/figure/Network-diagram-of-the-enterprise-network-used-in-the-experiment_fig3_288208464>
 
-https://tryhackme.com/room/socworkbookslookups
-
-
+TryHackMe, n.d., SOC L1 SOC Workbooks and Lookups, TryHackMe website, accessed 23 July 2026, Available: <https://tryhackme.com/room/socl1alertreporting>
 

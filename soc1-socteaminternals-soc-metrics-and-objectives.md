@@ -60,11 +60,11 @@ The threat detection rate should always be at 100%, as any singular missed threa
 
 A Service Level Agreement is a document that is signed between the company management and the internal SOC. Or in a Managed Security Service (MSSP), it is signed between the SOC provider and its customers. Within the SLA, the agreement usually requires how quick threats should be detected. This is measured through Mean Time to Detect (MTTD). Then how quick the alert should be acknowledged / start triage of the alert. This is measured using Mean Time to Acknowledge (MTTA). Finally, responding to the threat to stop a breach from spreading. Which is measured through the Mean Time to Respond (MTTR) metric. 
 
-Here is a timeline provided by TryHackMe on what the flow should look like. 
+Here is a timeline provided by TryHackMe on what the flow should look like: 
 
 <img width="950" height="300" alt="image" src="https://github.com/user-attachments/assets/b5baa498-897e-480a-b275-178fbe589187" />
 
-<sub>Thrreat Detection to Threat Response timeline (THM, n.d.)</sub>
+<sub>Thrreat Detection to Threat Response timeline. Notice how the MTTA is included in the MTTR time (THM, n.d.)</sub>
 
 Here is a reference table also provided by THM, regarding the SOC metrics for a SLA: 
 
@@ -74,6 +74,7 @@ Here is a reference table also provided by THM, regarding the SOC metrics for a 
 | Mean Time to Detect (MTTD) | 5 minutes| Average time between the attack and its detection by SOC tools |
 | Mean Time to Acknowledge (MTTA) | 10 minutes | Average time for L1 analysts to start triage of the new alert |
 | Mean Time to Respond (MTTR) | 60 minutes | Average time taken by SOC to actualy stop the breach from spreading |
+
 
 
 

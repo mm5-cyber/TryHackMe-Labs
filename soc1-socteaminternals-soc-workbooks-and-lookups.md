@@ -40,3 +40,17 @@ Identity and Asset inventories are essentially a table of information about user
 The Asset Inventory is a list of all the computing resources within an organisation's IT environment, there I foud out that HQ-FINFS-O2 is located in a UK Data center, and it's purpose is to be a file server for financial records. It would make sense as to why the CFO is using this resource. 
 
 <b>Task 3: Network Diagrams </b> 
+
+A network diagram is anover way to gather vital information. sometimes you may need a network diagram to understand an alert. Especially when working for bigger companies. 
+
+<img width="753" height="591" alt="image" src="https://github.com/user-attachments/assets/063d2c94-1720-429f-a28d-f653a599f6da" />
+
+<sub> This is an example of a network diagram featuring various subnets, and their corresponding IP address range. (ResearchGate, n.d.)
+
+<b>Task 3: Network Diagrams </b> 
+
+## Sources 
+
+https://www.researchgate.net/figure/Network-diagram-of-the-enterprise-network-used-in-the-experiment_fig3_288208464 
+
+

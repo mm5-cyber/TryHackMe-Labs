@@ -90,6 +90,8 @@ Using these resources for your investigation, make a verdict of whether the file
 
 Workbook 3 (Network Analysis): 
 
+Assign the alert to yourself, gather the relevent information using network diagrams and asset inventory. In this scenario it's listing the ports that was scanned by a potentially malicious IP, and finding the services that correlate to those ports. If the service is a vulnerability scanner, confirm if the types of scanning it does is expected.  IF the verdict is FP, contact the SOC engineers to tune the rules so that it mitigates the alert from happening again. Or if it's True Positive, then report, and escalate to L2. 
+
 <img width="768" height="629" alt="image" src="https://github.com/user-attachments/assets/160e42bc-2352-4c8b-a86b-4a96eccc7987" />
 
 
@@ -98,5 +100,8 @@ Workbook 3 (Network Analysis):
 ## Sources 
 
 https://www.researchgate.net/figure/Network-diagram-of-the-enterprise-network-used-in-the-experiment_fig3_288208464 
+
+https://tryhackme.com/room/socworkbookslookups
+
 
 

@@ -22,7 +22,6 @@
 
 - THM Workbook Practice Site
 
-- 
 ## The Process: 
 
 <b>Task 1: Introduction </b> 

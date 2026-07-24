@@ -91,3 +91,14 @@ This screenshot providede by THM shows an example of connecting to an end device
 
 It is important to remember that an EDR is a host-only security solution. Therefore it doesn't detect any network level threats. 
 
+<b>Task 3: Beyond the Antivirus</b>
+
+I then learnt about how an EDR is different from a typical antivirus. Before this lab I thought they were pretty similar. They both share in common the same motive of protecting the endpoint on which they are installed on. 
+
+Traditional antivirus's follow basic detection rules to block and remove known malware. However EDR's constantly monitoring, they are like a surveillance system that looks out for unusual activity and reports them (Palo Alto Networks, 2026). 
+
+
+## Sources 
+
+Palo Alto Networks, n.d., What is EDR vs Antivirus, Palo Alto Networks websites, viewed 24th July 2026, Accessed:  <https://www.paloaltonetworks.com/cyberpedia/what-is-edr-vs-antivirus>
+

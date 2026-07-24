@@ -97,6 +97,110 @@ I then learnt about how an EDR is different from a typical antivirus. Before thi
 
 Traditional antivirus's follow basic detection rules to block and remove known malware. However EDR's constantly monitoring, they are like a surveillance system that looks out for unusual activity and reports them (Palo Alto Networks, 2026). 
 
+<b>Task 4: How an EDR works?</b>
+
+In this task, these questions were answered: 
+
+- How does an EDR manage to provide this much visibility of the endpoints?
+
+- How can it detect advanced threats?
+
+- How can a few clicks eradicate the threat from an endpoint?
+
+<b> EDR Agents </b>
+EDR uses EDR agents that are deployed inside the endpoints. They are essentially sensors. They sit at the endpoint and monitor all activities, collecting information in detail and then sending them to the EDR console in real time. Additionally, these agents perform basic tasks like signature, and behaviour-based detections, whic are then sent to the EDR console, triggering alerts. 
+
+<b> EDR Console </b> 
+
+All the detailed data collected by the EDR agents are sent and anlysed through complex logic and machine learning algorithms within the centralised EDR Console. There, threat intelligence information is matched with the collected data to detect any threats. Thus, sending an alert. Essentially, the EDR Console is the brain. 
+
+Below is an EDR Console Dashboard, it puts all the incoming data together. It provides charts and tables of information, showing the current status of detections within all the endpoints. 
+
+<img width="2530" height="1204" alt="image" src="https://github.com/user-attachments/assets/a41938a9-3ea0-4f4d-b44c-cddda1b8ef06" />
+
+<sub> EDR Console Dashboard (THM, n.d.) </sub> 
+
+<b> What happens after detection</b>
+
+Based on the data provided by the EDR Console, it is up to the SOC analyst's to use their expertise to form a verdict of whether an alert is a false positive or true positive. In the event of a true positive, analysts can initiate remediation within the EDR console. 
+
+<b> EDR with Other Tools </b> 
+
+EDR tools can work alongside other security solutions to form a larger security ecosystem. For example, in a network there are firewalls, DLPs, Email Security Gateways, IAMs. These along with the EDR's are integrated into a SIEM solution. Which is what the analysts will be using for their investigations. 
+
+<b>Task 5: EDR Telemetry</b> 
+
+In this task, I learnt what exactly is telemetry, and how they are collected. 
+
+<b> What is Telemetry? </b> 
+
+It is essentially the data that is collected by the EDR agents, and sent to the EDR console. According to THM, telemetry is "the black box of an endpoint with everything necessary for detection and investigation" (THM, n.d.). 
+
+<b> Collected Telemetry </b> 
+
+
+When it comes to being able to differentiate regular and malicious activity, better judgements can be made when more data is collected. 
+
+EDR collects 'detailed' telemetry from the endpoints. Some of the telemtry that it collects are: 
+
+- Process Exeecutions and Terminations
+  
+   EDR monitors all of the running and idle processes within an End device. These help identify things like any processes that were initiated through a suspicious process, questionable child-parent process relationships, malware payloads etc. 
+
+- Network Connections
+Endpoint network connections are monitored to identify things like connections to a Command & Control server, detect unusual port usage, signs of data exfiltration, or lateral movement within the network. 
+
+- Command Line Activity
+
+Identifies signs of malicious command execution, and obfuscated powershell script executions by capturing all the commands executed on the endpoint. 
+
+- Files and Folders Modifications
+
+These should be monitored as threat actos make changes to files and folders to do things like execute ransomware, malicious file dropping, and data staging. Data staging is when threat actors bundle stolen files into a temporary folder before exfiltrating it. 
+
+- Registry Modifications
+
+The registry acts as a central database for configuration settings, system behavior, and startup applications within a Windows endpoint. That is why malware frequently targets the registry to modify these settings and behaviours for the benefit of the malicious user. 
+
+
+The activities created through advanced threats may seem harmless. But when observed through detailed telemetry, that is when the bigger picture can be found, and verdicts can be made. 
+
+<b>Task 6: Detection and Response Capabilities</b>
+
+This task highlights advanced detection techniques and the response mechanisms of an EDR.
+
+Some advanced detection techniques are: 
+
+- Behavioral Detection
+
+- Anomaly Detection
+
+- IOC matching
+
+- MITRE ATT&CK Mapping
+
+- Machine Learning Algorithms
+
+
+<b>Response</b> 
+
+After detection, comes response. EDR's offer both automated and manual responses. You can configure your own policies to block malicious behaviours automatically. With manual response, you are given a wide range of capabilties to make use of. These of which are: 
+
+- Isolate Host
+
+- Terminate Process
+
+- Quarantine
+
+- Remote Access
+
+- Artefacts Collection
+
+<b>Task 7: Investigate an alert on EDR (Practical</b> 
+
+This task took me through the role of a SOC Analyst at a company called TECH THM. I'm given access to an EDR console that is currently showing multiple medium and high-severity detections. What I'mt asked to do is to perform triage on each detection using the information provided in the EDR. 
+
+
 
 ## Sources 
 

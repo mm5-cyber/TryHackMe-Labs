@@ -173,15 +173,24 @@ Some advanced detection techniques are:
 
 - Behavioral Detection
 
+Observes the complete behaviour of a file. EDR catches malicious behaviours from malware that were designed to look like clean and legitimate processes.
+
+An example is winword.exe spawning powershell.exe. It's flagged because it is an unusual parent-child relationship. 
+
 - Anomaly Detection
 
+Overtime, the EDR will start understanding the behaviours of an endpoint. Any activities that deviate from the regular behaviour will be flagged.  
+
 - IOC matching
+The EDR will flag anything that matches indicators published on threat intelligence feeds.
 
 - MITRE ATT&CK Mapping
+A flagged EDR will include a "MITRE Tactic and Technique" section that provides info on what and how something is being attacked.
 
 - Machine Learning Algorithms
+Modern EDR's contain machine learning models that are trained on a large dataset regarding the normal and malicious behaviours. It's used to detect complex attack patterns.
 
-
+Complex attacks like fileless attakcs and multi-staged intrusions are detected through this feature. 
 <b>Response</b> 
 
 After detection, comes response. EDR's offer both automated and manual responses. You can configure your own policies to block malicious behaviours automatically. With manual response, you are given a wide range of capabilties to make use of. These of which are: 
@@ -190,19 +199,107 @@ After detection, comes response. EDR's offer both automated and manual responses
 
 - Terminate Process
 
-- Quarantine
+- Quarantinining Malicious Files
 
 - Remote Access
+For deeper visibility or to execute custom actions) 
 
 - Artefacts Collection
+Extracting data from the endpoints for detailed forensic investigation or reporting. Artefacts that are most commonly extracted are Memory Dumps, Event Logs, Specific Folder Contents, and Registry Hives.
 
 <b>Task 7: Investigate an alert on EDR (Practical</b> 
 
-This task took me through the role of a SOC Analyst at a company called TECH THM. I'm given access to an EDR console that is currently showing multiple medium and high-severity detections. What I'mt asked to do is to perform triage on each detection using the information provided in the EDR. 
+This task took me through the role of a SOC Analyst at a company called TECH THM. I'm given access to an EDR console that is currently showing multiple medium and high-severity detections. What I'mt asked to do is to perform triage on each detection using the information provided in the EDR.  
+
+<img width="715" height="1209" alt="image" src="https://github.com/user-attachments/assets/fd3e8506-afcf-49a8-8f40-72edc1ddef9b" /> 
+
+<sub>This is what the simulated EDR Dashboard looks like (THM, n.d.) </sub>
+
+
+Question1 : Which tool was launched by CMD.exe to download the payload on DESKTOP-HR01? 
+
+As seen on the dashboard image, I navigated to the most recent detection, with the targetted host being DESKTOP-HR01. 
+
+Below you can see the whole process chain of the attack. After opening a macro-enabled document, Winword.exe spawned a command terminal, which then downloaded a malicious file through curl, which provided access to the machine for the threat actor. 
+
+<img width="713" height="930" alt="image" src="https://github.com/user-attachments/assets/ebff45b9-04d1-4334-b36e-e3285a356ebf"/> 
+
+<sub>Process Info tab of the "Initial Access via Malicious Office Document"</sub> 
+
+The answer is: cURL.exe. The child process of cmd.exe in this scenario. 
+
+Question 2: What is the absolute path to the downloaded malware on the DESKTOP-HR01 machine?
+
+<img width="711" height="638" alt="image" src="https://github.com/user-attachments/assets/c614576a-a245-4385-9685-8b8210f656dd" /> 
+
+<sub>IOC/Indicators tab of the alert (THM, n.d.)</sub>
+
+Q2 AnswerL I navigated to the IOC/Indicators tab on that same alert and found the file path of the downloaded malware, which is C:\Users\Public\install.exe. The name of the malicious file is simply "install.exe".
+
+Question 3: What is the absolute path to the suspicious syncsvc.exe on the WIN-ENG-LAPTOP03 machine? 
+
+I navigated to the second alert within the EDR Dashboard. This alert is titled "Credential Dumping via LSASS Memory Access". The summary indicates that the alert is a suspicious behavuour found in memory dumps. An Unsigned binary (syncsvc.exe) launched from a temp directory and accessed the core process lsass.exe". Then the device made an attempt to access an outbound network, which was blocked. Most likely to send whatever it tried to steal.  
+
+
+I did some clarifing google searches, I learnt that an unsigned binary is a software without a cryptographic digital signaturem abd a temporary directory is a dedicated folder on an OS that is regularly used by applications to store short-lived data created during a process, and delted after it's finished. 
+
+The target of the unauthorised memory access "lsass.exe" stands for Local Security Authority Subsystem Service. According to JumpCloud, it is a core windows process for "authentication, authorisation, and credential management. It handles local security policies, user authentication, and stores credentials in memory (JumpCloud, 2026). 
+
+Upon further look at the process chain of this alert, the legitimate explorer.exe process launched the suspicious executible which targetted lsass.exe, and made an attempt to exfiltrate the data to an outbound network. 
+
+<img width="154" height="431" alt="image" src="https://github.com/user-attachments/assets/acc5cfcd-03d8-48e2-a039-7f2c881fcf54" /> 
+
+<sub> Process Chain of "Credential Dumping via LSASS Memory Access </sub>
+
+
+Within the IOC/Indicators tab, I found where the absolute path of the suspicious syncsvc.exe was on the WIN-ENG-LAPTOP03 machine. 
+
+
+<img width="726" height="711" alt="image" src="https://github.com/user-attachments/assets/9894d089-51d3-4d70-be70-95a201b6be11" /> 
+<sub>IOC/Indicators tab of "Credential Dumping via LSASS Memory Access" Alert.</sub>
+
+Q3 Answer: C:\Users\haris.khan\AppData\Local\Temp\syncsvc.exe
+
+Question 4: On which URL was the exfiltration attempt being made on WIN-ENG-LAPTOP03?
+
+Within the process info, I clicked on the "syncsvc.exe" node on the process chain and I was able to find the exact URL that the data was trying to exfiltrated to. 
+
+<img width="708" height="1099" alt="image" src="https://github.com/user-attachments/assets/5252b9aa-02ee-43d3-93fc-fc8d05c19499" />
+<sub>process info of the "syncsvc.exe" node. </sub>
+
+Q4 Answer: https://files-wetransfer.com/upload/session/ab12cd34ef56/dump_2025.dmp 
+
+I then navigated to the alert that targetted the host "DESKTOP-DEV01" for the final question. But first, I wanted to see what the alert is about. 
+
+It was titled "Execution from AppData Discovery". with the summary "An unsigned binary located in the user's AppData folder initiated an outbound HTTP connection. The behavior aligns with patterns often observed in dropper or staging malware."
+
+Dropper and malware staging is a technique used by attackers to deliver and install malicious malware sneakily., hiding it from security tools.  
+
+Under the Process Info, explorer.exe launched user-space binary. This can indicate some legitimate processes, or potential malware persistence abuse, which is the case. 
+
+
+The threat actors tried to run a fake update agent and make a connection to a certain IP. 
+
+<img width="670" height="664" alt="image" src="https://github.com/user-attachments/assets/d8e9b715-c01b-4eec-b869-a329cc1999f8" />\
+
+<sub>"UpdateAgent.exe" node information (THM, n.d.)</sub>
+
+Question 5: What was UpdateAgent.exe labelled by Threat Intel on DESKTOP-DEV01? 
+
+Question 5 Answer: The image above, revealed the threat intel, which is  "Known internal IT utility tool". This means that the attackers are abusing the name of a legitimate file name for nefarious actions, such as connecting to that external IP. 
+
+<b> Conclusion </b> 
+
+This project gave me a clear understanding of how modern EDR solutions work and why they differ from traditional antivirus tools. I explored EDR architecture, the telemetry it collects, and how those data points support detection and response. Investigating a realistic alert helped connect the theory to practical use. Overall, I gained a solid foundation in endpoint security and the role EDR plays in identifying and handling threats.
+
 
 
 
 ## Sources 
 
+Jumpcloud, 2026, What Is the Local Security Authority Subsystem Service (LSASS.exe)?, jump cloud website, viewed 26th July 2026, Accessed: <https://jumpcloud.com/it-index/what-is-the-local-security-authority-subsystem-service-lsass-exe>
+
 Palo Alto Networks, n.d., What is EDR vs Antivirus, Palo Alto Networks websites, viewed 24th July 2026, Accessed:  <https://www.paloaltonetworks.com/cyberpedia/what-is-edr-vs-antivirus>
+
+Try Hack Me, n.d., Introduction to EDR, Try Hack Me website, viewed 24th July 2026, Accessed: <https://tryhackme.com/room/introductiontoedrs?vccr=1>
 

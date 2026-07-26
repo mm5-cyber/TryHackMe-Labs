@@ -3,7 +3,7 @@
 
 <b>Difficulty: Easy</b> 
 
-<b>Date Completed: 24/07/2026</b>  
+<b>Date Completed: 26/07/2026</b>  
 
 <b>What did I learn:</b> 
 
@@ -288,7 +288,28 @@ Question 5: What was UpdateAgent.exe labelled by Threat Intel on DESKTOP-DEV01?
 
 Question 5 Answer: The image above, revealed the threat intel, which is  "Known internal IT utility tool". This means that the attackers are abusing the name of a legitimate file name for nefarious actions, such as connecting to that external IP. 
 
-<b> Conclusion </b> 
+## Bonus 
+
+Outside of the questions that I had to answer to complete the THM room, there was another alert that wasn't explored, and I wanted to figure out what happened in the alert. 
+
+The alert was titled "Suspicious Persistence via Scheduled Task". Persistence is essentially what hackers do to stay accessed to a system or network for a long time. 
+
+The targetted Host is "DESKTOP-UATSERVER", and the summary of the alert is "A suspicious executable (svcupdate.exe) was observed creating a scheduled task named “WinUpdateService” for persistence. The binary was unsigned and launched from an unusual path (C:\Users\john\AppData\Local\Temp). Scheduled tasks are a common persistence mechanism leveraged by attackers."
+
+<img width="716" height="977" alt="image" src="https://github.com/user-attachments/assets/e5942040-06ec-4a6e-9ccd-05a4780b8f5b" /> 
+
+<sub>Summary page of the "Suspicious Persistence via Scheduled task aler"</sub>
+
+According to Centri, I learnt that a scheduled task is a built in-operating system feature that automatically runs scripts during certain times (Centri, n.d.).
+
+In this scenario, a malicious executible created a task for the attacker to have future access to the sytem. 
+
+
+
+
+
+
+## Conclusion  
 
 This project gave me a clear understanding of how modern EDR solutions work and why they differ from traditional antivirus tools. I explored EDR architecture, the telemetry it collects, and how those data points support detection and response. Investigating a realistic alert helped connect the theory to practical use. Overall, I gained a solid foundation in endpoint security and the role EDR plays in identifying and handling threats.
 
@@ -296,6 +317,8 @@ This project gave me a clear understanding of how modern EDR solutions work and 
 
 
 ## Sources 
+
+Centri, n.d., Knock, Knock! Who’s Persisting? Sneaky Secrets in Windows Scheduled Tasks, Centri website, viewed 26th July 2026, Accessed: <https://www.centri.org/blog/posts/persistence-mechanisms-windows-scheduled-tasks>
 
 Jumpcloud, 2026, What Is the Local Security Authority Subsystem Service (LSASS.exe)?, jump cloud website, viewed 26th July 2026, Accessed: <https://jumpcloud.com/it-index/what-is-the-local-security-authority-subsystem-service-lsass-exe>
 

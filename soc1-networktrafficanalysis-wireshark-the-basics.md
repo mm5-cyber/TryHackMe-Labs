@@ -51,6 +51,21 @@ Below is a picture provided by THM, which shows all the main sections within Wir
 
 <img width="1558" height="735" alt="image" src="https://github.com/user-attachments/assets/725de9ca-912f-4477-8808-11846131e9b9" />
 
-<sub>Wireshark's GUI and highlighted sections, image provided by THM (THM, n.d.)</sub>
+<sub>Wireshark's GUI and highlighted sections, image provided by THM (THM, n.d.)</sub> 
 
+You can load a packet capture file by using the file menu, dragging and dropping the file into the application, or double-clicking on the file itself to load it into Wireshark to view it's contents (the packets that have been captured). 
+
+Below is the packet capture file "http1.pcapng" loaded into Wireshark, as well as a visual representation of the three different panes: 
+
+<img width="1200" height="460" alt="image" src="https://github.com/user-attachments/assets/0f90be99-6444-4e97-99ad-2e82030690a0" /> 
+
+<sub>A packet capture file opened in Wireshark, and the three different panes (THM, n.d.)</sub>
+
+The three different panes are as followed: 
+
+- Packet List Pane
+
+- Packet Details Pane
+
+- Packet Bytes Pane
 

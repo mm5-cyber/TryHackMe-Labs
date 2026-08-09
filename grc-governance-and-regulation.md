@@ -29,12 +29,33 @@ I was then introduced to Information Security Governance, which represents the e
 
 Information Security Governance is a part of top-tier management and it conists of these processes: 
 
-- Strategy
+- Strategy: It's important to have comprehensive information security strategies that align with an organisation's overall business objectives be developed and implemented.
 
-- Policies and procedures
+- Policies and procedures: It's important to prepare policies and procedures that have the purpose of governing the use and protection of information assets. 
 
-- Risk management
+- Risk management: Risk assessments are conducted to identify potential threats to the organisation's information assets, as well as for the purpose of implementing risk mitigation measures. 
 
-- Performance measurement
+- Performance measurement: Metrics and KPIs should be established as they measure the effectiveness of the information security governance program. 
 
-- Compliance
+- Compliance: Making sure that the processes and practices of a business are being compliant with the relevant regulations and align with industry best practices. 
+
+<b> Information Security Regulation </b> 
+
+Governance, and Regulation have definitions that are similar, but not the same. Regulations are things that are created and used by governing bodies to ensure that a business is compliant, they care and prioritise safety, and they stay orderly. According to THM, Information Security regulations  refers to "legal and regulatory frameworks that govern the use and protection of information assets. Regulations are designed to protect sensitive data from unauthorised access, theft, and misuse. 
+
+Compliance is often mandatory, the regulations are often created and enforced by government agencies or other regulatory bodies. 
+
+Examples of Information security regulations are: 
+
+- PCI DSS
+
+- GDPR
+
+- Cyber Security Act 2024 (Australian)
+
+- Privacy Act (1988)
+
+- Security of Critical Infrastructure (SOCI) Act 2018
+
+As mentioned before, governance is giving direction and making sure that an organisation or system can achieve their objectives, while also remaining compliant with the laws, regulations, and standards. 
+

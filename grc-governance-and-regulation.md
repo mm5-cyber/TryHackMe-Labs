@@ -47,13 +47,13 @@ Compliance is often mandatory, the regulations are often created and enforced by
 
 Examples of Information security regulations are: 
 
-- PCI DSS
+- Payment Card Industry Data Security Standard (PCI DSS): It is a globally enforced set of security rules designed to protect information from debit and cred cards from theft and fraud. 
 
-- GDPR
+- General Data Protection Regulation (GDPR): A strict data privacy and security law that is meant to be followed by all member countries in the European Union
 
 - Cyber Security Act 2024 (Australian)
 
-- Privacy Act (1988)
+- Privacy Act (1988): An Australian law that sets rules for how personal data should be handled by companies, and government agencies. 
 
 - Security of Critical Infrastructure (SOCI) Act 2018
 
